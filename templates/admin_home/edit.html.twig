@@ -1,12 +1,12 @@
 {% extends 'base-be.html.twig' %}
 
-{% block title %}Edit{% endblock %}
+{% block title %}Home{% endblock %}
 
 {% block body %}
     
     <a href="{{ path('app_admin_home_index') }}" class="btn btn-dark btn-sm mb-2">back</a>
     <div class="d-flex justify-content-between align-items-center">
-        <h1>Edit</h1>
+        <h1>Modifier</h1>
         {{ include('admin_home/_delete_form.html.twig') }}
     </div>
 
