@@ -7,8 +7,9 @@ use DateTimeImmutable;
 use App\DataFixtures\LivreFixtures;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
+use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 
-class ImageFixtures extends Fixture
+class ImageFixtures extends Fixture implements DependentFixtureInterface
 {
     public function load(ObjectManager $manager): void
     {
@@ -74,6 +75,13 @@ class ImageFixtures extends Fixture
         $image->setRankNumber(1);
         $image->setUpdatedAt(new DateTimeImmutable());
         $manager->persist($image);
+        
         $manager->flush();
+    }
+    public function getDependencies()
+    {
+        return[
+            LivreFixtures::class
+        ];
     }
 }

@@ -2,6 +2,9 @@
 {% set dashboardActive = "" %}
 {% set homeActive = "" %}
 {% set carouselActive = "" %}
+{% set categorieActive = "" %}
+{% set livreActive = "" %}
+{% set imageActive = "" %}
 
 
 {# On verifie si un mot est contenu dans la route (barre d'adresse) et si c'est le cas on modifie la valeur de la variable concerné #}
@@ -13,6 +16,15 @@
 
 {% elseif "carousel" in app.request.pathinfo %}
 {% set carouselActive = "active" %}
+
+{% elseif "categorie" in app.request.pathinfo %}
+{% set categorieActive = "active" %}
+
+{% elseif "livre" in app.request.pathinfo %}
+{% set livreActive = "active" %}
+
+{% elseif "image" in app.request.pathinfo %}
+{% set imageActive = "active" %}
 
 {% else %}
 {% set dashboardActive = "active" %}
