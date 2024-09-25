@@ -33,7 +33,7 @@ class AdminCarouselController extends AbstractController
             $entityManager->persist($carousel);
             $entityManager->flush();
             // Message Flash
-            $this->addFlash('success', 'carousel a bien été ajouté!');
+            $this->addFlash('success', 'carousel has been created');            
             return $this->redirectToRoute('app_admin_carousel_index', [], Response::HTTP_SEE_OTHER);
         }
 

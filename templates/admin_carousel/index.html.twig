@@ -38,7 +38,8 @@
                 <td>{{ carousel.updatedAt ? carousel.updatedAt|date('d-m-Y H:i:s') : '' }}</td>
                 <td>{{ carousel.isActive ? 'Yes' : 'No' }}</td>
                 <td>
-                    {% include 'admin_home/_delete_form.html.twig' %}
+                    
+                    {{ include('admin_carousel/_delete_form.html.twig') }}
                     <a href="{{ path('app_admin_carousel_show', {'id': carousel.id}) }}" class="btn btn-dark mb-1"><i class="align-middle" data-feather="eye"></i></a>
                     <a href="{{ path('app_admin_carousel_edit', {'id': carousel.id}) }}" class="btn btn-warning"><i class="align-middle" data-feather="edit-2"></i></a>
                 </td>
